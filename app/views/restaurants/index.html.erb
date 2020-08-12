@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/p-sEkj6-hAM)">
+  Our Restaurants
+</div>
+
+  <div class="cards">
+    <% @restaurants.each do |restaurant| %>
+        <div class="card-food">
+          <img src="https://source.unsplash.com/collection/1261" />
+        <div class="card-food-infos">
+          <div>
+          <h2><%= restaurant.name %></h2>
+          <p><%= restaurant.phone_number %></p>
+          <p><%= restaurant.address %></p>
+          <a><%= link_to "More details ?", restaurant_path(restaurant)%></a>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+  <a><%= link_to "Add new restaurant ?", new_restaurant_path %></a>
+</div>
+
